@@ -5,6 +5,8 @@ import fs from "fs";
 import { GoogleGenAI } from "@google/genai";
 
 const app = express();
+app.get("/", (req, res) => res.send("OK"));
+app.get("/health", (req, res) => res.json({ ok: true }));
 const upload = multer({ dest: "uploads/" });
 
 const genAI = new GoogleGenAI({
